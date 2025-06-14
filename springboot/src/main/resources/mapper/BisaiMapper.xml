@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.BisaiDao">
+
+    <select id="findBySearch" resultType="com.example.entity.Bisai">
+        select bisai.*, gonggao.name AS typeName from
+        bisai left join gonggao on bisai.typeId = gonggao.id
+        <where>
+            <if test="params != null and params.name != null and params.name != ''">
+                and bisai.name like concat('%',#{ params.name},'%')
+            </if>
+        </where>
+        order by bisai.id
+    </select>
+
+
+
+</mapper>
