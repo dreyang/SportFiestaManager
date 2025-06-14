@@ -1,2 +1,2 @@
 # SportFiestaManager
-基于springboot+vue实现的校运会管理系统
+基于springboot+vue实现的前后端分离的校运会管理系统
